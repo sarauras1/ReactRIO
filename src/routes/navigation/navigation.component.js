@@ -5,7 +5,7 @@ import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { UserContext } from "../../contexts/userContext";
 import { SignOutUser } from "../../utils/firebase.utils";
 import CartIcon from "../../components/cart-icon/cart-icon";
-import CartDropdown from "../../components/cart-icon-dropdown/cart-dropdown.component";
+import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 import { CartContext } from "../../contexts/Cart.context";
 
 export default function Navigation() {
