@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import FormInput from "../formInput/form-input.component";
+import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 import "./sign-in-form.styles.scss"
 

@@ -28,6 +28,7 @@ provider.setCustomParameters({
 export const auth = getAuth(app);
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 export const db = getFirestore();
+
 export const addCollectionAndDocuments = async (collectionKey, objectsToAdd)=>{
  const batch = writeBatch(db);
  const collectionRef = collection(db, collectionKey);
