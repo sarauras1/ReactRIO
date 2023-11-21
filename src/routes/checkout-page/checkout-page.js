@@ -1,12 +1,17 @@
-import { Fragment, useContext } from "react";
-import { CartContext } from "../../contexts/Cart.context";
+import { Fragment } from "react";
+import { useSelector } from 'react-redux';
+
+import {
+  selectCartItems,
+  selectCartTotal,
+} from '../../app/cart/cart-selector';
 import CheckoutItem from "../../components/checkout-item/checkout-item.component";
 import PaymentForm from "../../components/payment-form/payment-form.component";
 import "./checkout.styles.scss"
 
 export default function CheckoutPage(){
-    const {cartItems} = useContext(CartContext)
-    const total = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  const cartItems = useSelector(selectCartItems);
+  const cartTotal = useSelector(selectCartTotal);
 return (
     <Fragment>
     
@@ -32,7 +37,7 @@ return (
         {
          cartItems.map((cartItem) => <CheckoutItem key={cartItem.id} cartItems={cartItem}/>)
         }
-        <div className="total"><span>Total {total}</span></div>
+        <div className="total"><span>Total {cartTotal}</span></div>
         <PaymentForm/>
       </div>
        

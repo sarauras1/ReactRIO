@@ -15,6 +15,7 @@ export default function PaymentForm(){
         
    <div className='payment-container'>
    <form className='payment-form'>
+    <h2>Credit card payment</h2>
        <CardElement/>
        <Button buttonType={"inverted"}>Pay Now</Button>
     </form>

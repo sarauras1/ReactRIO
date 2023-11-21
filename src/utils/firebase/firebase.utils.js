@@ -39,18 +39,13 @@ export const addCollectionAndDocuments = async (collectionKey, objectsToAdd)=>{
  await batch.commit();
 }
 
-export const getCategoriesAndDocuments = async ()=>{
+export const getCategoriesAndDocuments = async () => {
   const collectionRef = collection(db, 'collections');
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
-  const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) =>{
-    const {title, items} = docSnapshot.data();
-    acc[title.toLowerCase()] = items;
-    return acc;
-  }, {});
-  return categoryMap;
-}
+  return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
+};
 //sign in with google
 export const createUserDocFromAuth = async (userAuth) => {
   if (!userAuth) return;

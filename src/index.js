@@ -3,27 +3,19 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { store } from "./store";
+import { store } from "./app/store/store";
 import { BrowserRouter } from "react-router-dom";
-import { UserProvider } from "./contexts/userContext";
-import { ProductsProvider } from "./contexts/product.context";
-import { CartProvider } from "./contexts/Cart.context";
 import { Elements } from "@stripe/react-stripe-js";
 import { stripePromise } from "./utils/stripe/stripe";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <UserProvider>
-        <ProductsProvider>
-          <CartProvider>
-            <Elements stripe={stripePromise}>
-              <App />
-            </Elements>
-          </CartProvider>
-        </ProductsProvider>
-      </UserProvider>
+    <BrowserRouter>    
+        <Elements stripe={stripePromise}>
+          <App />
+        </Elements>       
     </BrowserRouter>
   </Provider>
 );

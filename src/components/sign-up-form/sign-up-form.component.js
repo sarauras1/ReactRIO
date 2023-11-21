@@ -3,7 +3,7 @@ import Button from "../button/button.component";
 import {
   createAuthUserwithEmailAndPassword,
   createUserDocFromAuthForm,
-} from "../../utils/firebase.utils";
+} from "../../utils/firebase/firebase.utils";
 import InputForm from "../form-input/form-input.component";
 import "./sign-up-form.styles.scss";
 
